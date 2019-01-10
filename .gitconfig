@@ -1,6 +1,22 @@
+# Dominic Gomez
+# $HOME/.gitconfig
+
 [user]
 	name = Dominic Gomez
 	email = dominicgomez@users.noreply.github.com
 [core]
 	editor = vim
 	excludesfile = .gitignore
+[alias]
+    i = init
+    s = status
+    a = add
+    c = commit -m
+    ca = commit -am
+    co = checkout
+    cb = checkout -b
+    b = branch
+    d = branch -d
+    D = branch -D
+    p = push
+    po = push origin
