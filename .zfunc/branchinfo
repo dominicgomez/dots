@@ -13,5 +13,13 @@
 branchinfo() {
     # I feel like the Option key symbol (⌥ = U+2325) is a better branch symbol
     # than the actual branch symbol.
-    git branch 2>/dev/null | sed -ne 's/^\* \(.*\)/ ⌥ \1/p'
+    br=$(git branch 2>/dev/null | sed -ne 's/^\* \(.*\)/ ⌥ \1/p')
+    # Make sure
+    if [ -z $br ]; then
+        br=$(dot branch 2>/dev/null | sed -ne 's/^\* \(.*\)/ ⌥ \1/p')
+        if [ -z $br ]; then
+            exit 0
+        fi
+    fi
+    echo $br
 }
