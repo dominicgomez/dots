@@ -50,8 +50,11 @@ PS2="%F{white}...%f "
 # Environment Variables
 # ---------------------
 
+# POSIX
 export PATH='/usr/local/bin':"$PATH"
 export TERM='xterm-256color-italic'
+export EDITOR='vim'
+export VISUAL='mvim'
 # Zsh
 export HISTFILE="$HOME/.zhist"
 export HISTSIZE=1028
@@ -68,17 +71,26 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # -------
 
 alias ..='cd ..'
+alias ...="source $HOME/.zshrc"
 alias e='exit'
 alias grep='grep --color=auto'
 alias la='ls -A'
 alias ls='ls -FG'
 alias tree='tree -C'
 # Dotfiles
-alias ...="source $HOME/.zshrc"
 alias dot="git --git-dir=$HOME/.dots --work-tree=$HOME"
-alias g="$VISUAL $HOME/.gvimrc"
-alias v="$VISUAL $HOME/.vimrc"
-alias z="$VISUAL $HOME/.zshrc"
+alias gc="$EDITOR $HOME/.gitconfig"
+alias gcv="$VISUAL $HOME/.gitconfig"
+alias gi="$EDITOR $HOME/.gitignore"
+alias giv="$VISUAL $HOME/.gitignore"
+alias gv="$EDITOR $HOME/.gvimrc"
+alias gvv="$VISUAL $HOME/.gvimrc"
+alias t="$EDITOR $HOME/.tmux.conf"
+alias tv="$VISUAL $HOME/.tmux.conf"
+alias v="$EDITOR $HOME/.vimrc"
+alias vv="$VISUAL $HOME/.vimrc"
+alias z="$EDITOR $HOME/.zshrc"
+alias zv="$VISUAL $HOME/.zshrc"
 # Homebrew
 alias bls='brew list'
 alias b:='brew search'
@@ -86,11 +98,9 @@ alias b::='brew info'
 alias bi='brew install'
 alias bri='brew reinstall'
 alias brm='brew uninstall'
-alias bcl='brew cleanup'
 alias bu='brew update'
 alias buu='brew update && brew upgrade'
-alias buuu='brew update && brew upgrade && brew cleanup'
-alias bcheck='brew doctor'
+alias bdoc='brew doctor'
 # Pip
 alias pls='pip list'
 alias p:='pip search'
@@ -104,17 +114,19 @@ alias puu='pip install --upgrade'
 # External Scripts
 # ----------------
 
-pfx='/usr/local/share'
-source "${pfx}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "${pfx}/zsh-history-substring-search/zsh-history-substring-search.zsh"
-source "${pfx}/zsh-autosuggestions/zsh-autosuggestions.zsh"
+pfx='/usr/local'
 
-source '/usr/local/bin/virtualenvwrapper.sh'
+# Zsh
+. "${pfx}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+. "${pfx}/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+. "${pfx}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# virtualenvwrapper
+. "${pfx}/bin/virtualenvwrapper.sh"
 
 # =============================================================================
 
-# Bindings
-# --------
+# Key Bindings
+# ------------
 
 bindkey '^P' autosuggest-accept
 bindkey '^ ' autosuggest-execute
