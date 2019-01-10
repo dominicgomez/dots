@@ -1,4 +1,7 @@
 " Dominic Gomez
+" $HOME/.vimrc
+
+" =============================================================================
 
 " Plugins:
 " --------
@@ -11,6 +14,8 @@ Plug 'tpope/vim-commentary'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
+
+" =============================================================================
 
 " Variables:
 " ----------
@@ -35,8 +40,6 @@ let g:syntastic_echo_current_error = 1
 let g:syntastic_enable_balloons = 0
 "python
 let g:syntastic_python_checkers = ['flake8']
-" let g:syntastic_python_pylint_args = '--errors-only'
-" let g:syntastic_python_pylint_args = '-d invalid-name -d too-few-public-methods'
 
 " YouCompleteMe
 " FIXME
@@ -47,6 +50,8 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+
+" =============================================================================
 
 " Functions:
 " ----------
@@ -61,6 +66,8 @@ function! s:rstrip()
     silent! %s/\s\+$//e
 endfunction
 
+" =============================================================================
+
 " Key Mappings:
 " -------------
 inoremap <silent> <Esc> <Esc>:write<CR>
@@ -74,9 +81,12 @@ nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
 " comment toggling
-" gcc and gc are defined by vim-commentary, so my own mappings that use them must be recursive.
+" `gcc` and `gc` are defined by vim-commentary, so my own mappings that use
+" them must be recursive.
 nmap <silent> <Leader>c gcc
 vmap <silent> <Leader>c gc
+
+" =============================================================================
 
 " Autocommands:
 " -------------
@@ -89,6 +99,8 @@ augroup python_files
     autocmd!
     autocmd FileType python set colorcolumn=80 textwidth=79
 augroup END
+
+" =============================================================================
 
 " Options:
 " --------
@@ -119,6 +131,8 @@ set textwidth=79
 set printfont=courier:h10
 set printheader=%F%=%N
 set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
+
+" =============================================================================
 
 " Syntax Highlighting:
 " --------------------
