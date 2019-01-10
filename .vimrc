@@ -157,3 +157,5 @@ set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 
 syntax on
 colorscheme jellybeans
+
+" vim: set et wrap sw=4 sts=4 ts=4 tw=79:

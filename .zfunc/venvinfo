@@ -15,3 +15,5 @@ venvinfo() {
         echo " ∫ "$(basename "$VIRTUAL_ENV")
     fi
 }
+
+# vim: set et wrap sw=4 sts=4 ts=4 tw=79:

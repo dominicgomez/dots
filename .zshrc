@@ -120,3 +120,5 @@ bindkey '^P' autosuggest-accept
 bindkey '^ ' autosuggest-execute
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# vim: set et wrap sw=4 sts=4 ts=4 tw=79:

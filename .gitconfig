@@ -20,3 +20,5 @@
     D = branch -D
     p = push
     po = push origin
+
+# vim: set et wrap sw=4 sts=4 ts=4 tw=79:
