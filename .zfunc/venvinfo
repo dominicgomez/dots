@@ -13,7 +13,5 @@
 venvinfo() {
     if ! [ -z "$VIRTUAL_ENV" ]; then
         echo " ∫ "$(basename "$VIRTUAL_ENV")
-    else
-        echo ""
     fi
 }
