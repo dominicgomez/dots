@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+# Dominic Gomez
+# $HOME/.zfunc/branchinfo
+
+# *****************************************************************************
+# Functions whose names end in 'info' are used to append information to the
+# command prompt. The output of each such function must include a single
+# leading whitespace character.
+# *****************************************************************************
+
+# Get the working git branch when possible.
+branchinfo() {
+    # I feel like the Option key symbol (⌥ = U+2325) is a better branch symbol
+    # than the actual branch symbol.
+    git branch 2>/dev/null | sed -ne 's/^\* \(.*\)/ ⌥ \1/p'
+}
