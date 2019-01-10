@@ -27,44 +27,23 @@ autoload -Uz colors && colors
 autoload -Uz branchinfo
 autoload -Uz venvinfo
 
+# =============================================================================
 
-# Command Prompt
-# ==============
+# Prompts
+# -------
 
-# ANSI Color Codes
-# -------------------------
-# Name              FG  BG
-# -------------------------
-# Black             30  40
-# Red               31  41
-# Green             32  42
-# Yellow            33  43
-# Blue              34  44
-# Magenta           35  45
-# Cyan              36  46
-# White             37  47
-# Bright Black      90  100
-# Bright Red        91  101
-# Bright Green      92  102
-# Bright Yellow     93  103
-# Bright Blue       94  104
-# Bright Magenta    95  105
-# Bright Cyan       96  106
-# Bright White      97  107
-#
-# *Use 0 to reset attributes*
-
-# Spacing between items in the command prompt is handled by each of the
-# functions used to build it.
 # ❯ = U+276F
 # ✗ = U+2717
+# Spacing between items in the command prompt is handled by each of the
+# functions used to build it.
 PROMPT='
-%~$(branchinfo)$(venvinfo)
-❯ '
+%F{blue}%~%f%F{black}$(branchinfo)%f%F{green}$(venvinfo)%f
+%F{magenta}❯%f '
 RPROMPT="%F{red}%0(?..✗✗✗)%f"
 # Copy Python.
 PS2="%F{white}...%f "
 
+# =============================================================================
 
 # Environment Variables
 # =====================
