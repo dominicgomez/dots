@@ -13,13 +13,14 @@
 branchinfo() {
     # I feel like the Option key symbol (⌥ = U+2325) is a better branch symbol
     # than the actual branch symbol.
-    br=$(git branch 2>/dev/null | sed -ne 's/^\* \(.*\)/ ⌥ \1/p')
-    # Make sure
-    if [ -z $br ]; then
-        br=$(dot branch 2>/dev/null | sed -ne 's/^\* \(.*\)/ ⌥ \1/p')
-        if [ -z $br ]; then
-            exit 0
+    gitbr=$(git branch 2>/dev/null | sed -ne 's/^\* \(.*\)/ ⌥ \1/p')
+    if ! [ -z $gitbr ]; then
+        echo $gitbr
+    else
+        dotbr=$(dot branch 2>/dev/null | sed -ne 's/^\* \(.*\)/ ⌥ \1/p')
+        # Only show the status of my dotfile repo when I'm in `.dots`.
+        if ! [ -z $dotbr ] && [ $(pwd) = "$HOME/.dots" ]; then
+            echo $dotbr
         fi
     fi
-    echo $br
 }
