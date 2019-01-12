@@ -6,7 +6,7 @@
 	email = dominicgomez@users.noreply.github.com
 [core]
 	editor = vim
-	excludesfile = .gitignore
+	excludesfile = /Users/nic/.gitignore
 [alias]
     i = init
     s = status
