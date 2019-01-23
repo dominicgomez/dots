@@ -9,6 +9,7 @@
 call plug#begin("$HOME/.vim/plugged")
 Plug 'flazz/vim-colorschemes'
 Plug 'hdima/python-syntax'
+Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-commentary'
@@ -135,7 +136,6 @@ set number
 set ruler
 " set cursorcolumn
 " set cursorline
-set background=light
 set colorcolumn=80
 " text formatting
 set autoindent
@@ -156,6 +156,6 @@ set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 " -------------------
 
 syntax on
-colorscheme jellybeans
+colorscheme gruvbox
 
 " vim: set et wrap sw=4 sts=4 ts=4 tw=79:
