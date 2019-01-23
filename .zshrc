@@ -39,7 +39,7 @@ autoload -Uz venvinfo
 # Spacing between items in the command prompt is handled by each of the
 # functions used to build it.
 PROMPT='
-%F{blue}%~%f%F{black}$(branchinfo)%f%F{green}$(venvinfo)%f
+%F{blue}%~%f%F{white}$(branchinfo)%f%F{green}$(venvinfo)%f
 %F{magenta}❯%f '
 RPROMPT="%F{red}%0(?..✗✗✗)%f"
 # Copy Python.
