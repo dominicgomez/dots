@@ -1,0 +1,27 @@
+" Dominic Gomez
+" $HOME/.vrapperrc
+
+inoremap <silent> <Esc> <Esc>:write<CR>
+inoremap <silent> jj <Esc>:write<CR>
+nnoremap <silent> <Leader>w :write<CR>
+
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
+
+set autochdir
+set cursorline
+set number
+set ruler
+set wrap
+
+set autoindent
+set smartindent
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set textwidth=79
+
+" vim: set et wrap sw=4 sts=4 ts=4 tw=79
