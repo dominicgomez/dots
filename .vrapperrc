@@ -1,14 +1,12 @@
 " Dominic Gomez
 " $HOME/.vrapperrc
 
-inoremap <silent> <Esc> <Esc>:write<CR>
-inoremap <silent> jj <Esc>:write<CR>
-nnoremap <silent> <Leader>w :write<CR>
+inoremap jj <Esc>
 
-nnoremap <silent> <C-h> <C-w>h
-nnoremap <silent> <C-j> <C-w>j
-nnoremap <silent> <C-k> <C-w>k
-nnoremap <silent> <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 set autochdir
 set cursorline
@@ -23,5 +21,3 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set textwidth=79
-
-" vim: set et wrap sw=4 sts=4 ts=4 tw=79
