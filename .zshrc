@@ -79,18 +79,20 @@ alias ls='ls -FG'
 alias tree='tree -C'
 # Dotfiles
 alias dot="git --git-dir=$HOME/.dots --work-tree=$HOME"
-alias gc="$EDITOR $HOME/.gitconfig"
-alias gcv="$VISUAL $HOME/.gitconfig"
-alias gi="$EDITOR $HOME/.gitignore"
-alias giv="$VISUAL $HOME/.gitignore"
-alias gv="$EDITOR $HOME/.gvimrc"
-alias gvv="$VISUAL $HOME/.gvimrc"
-alias t="$EDITOR $HOME/.tmux.conf"
-alias tv="$VISUAL $HOME/.tmux.conf"
-alias v="$EDITOR $HOME/.vimrc"
-alias vv="$VISUAL $HOME/.vimrc"
-alias z="$EDITOR $HOME/.zshrc"
-alias zv="$VISUAL $HOME/.zshrc"
+alias gc="$VISUAL $HOME/.gitconfig"
+alias gc_t="$EDITOR $HOME/.gitconfig"
+alias gi="$VISUAL $HOME/.gitignore"
+alias gi_t="$EDITOR $HOME/.gitignore"
+alias gv="$VISUAL $HOME/.gvimrc"
+alias gv_t="$EDITOR $HOME/.gvimrc"
+alias t="$VISUAL $HOME/.tmux.conf"
+alias t_t="$EDITOR $HOME/.tmux.conf"
+alias v="$VISUAL $HOME/.vimrc"
+alias v_t="$EDITOR $HOME/.vimrc"
+alias vr="$VISUAL $HOME/.vrapperrc"
+alias vr_t="$EDITOR $HOME/.vrapperrc"
+alias z="$VISUAL $HOME/.zshrc"
+alias z_t="$EDITOR $HOME/.zshrc"
 # Homebrew
 alias bls='brew list'
 alias b:='brew search'
