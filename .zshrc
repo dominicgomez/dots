@@ -142,9 +142,10 @@ pfx='/usr/local'
 bindkey '^P' autosuggest-accept
 bindkey '^ ' autosuggest-execute
 
+# FIXME
 # Using the up and down arrows to search zsh command history interferes with
 # scrolling through python interpreter history, so use left and right instead.
-bindkey '^[[D' history-substring-search-up
-bindkey '^[[C' history-substring-search-down
+# bindkey '^[[D' history-substring-search-up
+# bindkey '^[[C' history-substring-search-down
 
 # vim: set et wrap sw=4 sts=4 ts=4 tw=79:
