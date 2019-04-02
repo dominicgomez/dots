@@ -1,0 +1,7 @@
+#!/usr/local/bin/zsh
+# Dominic Gomez
+# $WORKON_HOME/postmkvirtualenv
+
+# This hook is sourced after a new virtualenv is activated.
+
+pip install jedi flake8
