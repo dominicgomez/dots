@@ -58,11 +58,8 @@ function! s:rstrip()
     silent! %s/\s\+$//e
 endfunction
 
-" =============================================================================
-
-" Key Mappings
-" ------------
-
+" Key Mappings:
+" -------------
 inoremap <silent> <Esc> <Esc>:write<CR>
 inoremap <silent> jj <Esc>:write<CR>
 nnoremap <silent> <Leader>w :write<CR>
@@ -79,27 +76,22 @@ nnoremap <silent> <C-l> <C-w>l
 nmap <silent> <Leader>c gcc
 vmap <silent> <Leader>c gc
 
-" =============================================================================
-
-" Autocommands
-" ------------
-
+" Autocommands:
+" -------------
+"
 augroup basic_editor_features
     autocmd!
     autocmd BufRead * call s:resetcursorpos()
     autocmd BufWritePre * call s:rstrip()
 augroup END
-
+"
 augroup python_files
     autocmd!
     autocmd FileType python set colorcolumn=80 textwidth=79
 augroup END
 
-" =============================================================================
-
-" Options
-" -------
-
+" Options:
+" --------
 set hlsearch
 set modeline
 " general
@@ -127,11 +119,8 @@ set printfont=courier:h10
 set printheader=%F%=%N
 set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 
-" =============================================================================
-
-" Syntax Highlighting
-" -------------------
-
+" Syntax Highlighting:
+" --------------------
 syntax on
 colorscheme dracula
 
