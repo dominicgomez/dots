@@ -1,53 +1,35 @@
 " Dominic Gomez
 " $HOME/.vimrc
 
-" =============================================================================
-
-" Plugins
-" -------
-
+" Plugins:
+" --------
 call plug#begin("$HOME/.vim/plugged")
 Plug 'flazz/vim-colorschemes'
 Plug 'hdima/python-syntax'
-Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'justinmk/vim-syntax-extra'
+Plug 'majutsushi/tagbar'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-commentary'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
 
-" =============================================================================
-
-" Vim Variables
-" -------------
-
+" Vim Variables:
+" --------------
 let g:mapleader = ','
 
-" =============================================================================
-
-" Plugin Variables
-" ----------------
-
-" flazz/vim-colorschemes
-
+" Plugin Variables:
+" -----------------
 " hdima/python-syntax
 let g:python_highlight_all = 1
-
-" justinmk/vim-syntax-extra
-
 " octol/vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
-
-" tpope/vim-commentary
-
 " Valloric/YouCompleteMe
 " FIXME
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_min_num_of_chars_for_completion = 1
-
 " vim-syntastic/syntastic
 let g:syntastic_mode_map = {
 \   'passive_filetypes': ['c', 'cpp'] }
@@ -63,13 +45,8 @@ let g:syntastic_echo_current_error = 1
 let g:syntastic_enable_balloons = 0
 let g:syntastic_python_checkers = ['flake8']
 
-" YouCompleteMe
-
-" =============================================================================
-
-" Functions
-" ---------
-
+" Functions:
+" ----------
 " Move the cursor to its last known position in the buffer.
 function! s:resetcursorpos()
     if line("'\"") > 1 && line("'\"") <= line("$")
@@ -156,6 +133,6 @@ set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 " -------------------
 
 syntax on
-colorscheme gruvbox
+colorscheme dracula
 
 " vim: set et wrap sw=4 sts=4 ts=4 tw=79:
