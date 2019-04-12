@@ -20,4 +20,4 @@ export SAVEHIST=128
 export EDITOR='vim'
 export VISUAL='mvim'
 export TERM='xterm-256color-italic'
-export PATH='/usr/local/bin':"$PATH":"$GOPATH/bin":"$GOROOT/bin"
+export PATH="/usr/local/bin:$PATH:$GOPATH/bin:$GOROOT/bin:$HOME/.cargo/bin"
