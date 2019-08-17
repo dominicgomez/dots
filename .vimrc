@@ -39,11 +39,6 @@ set textwidth=79
 
 
 let g:mapleader = ','
-inoremap <silent> jj <Esc><CR>
-nnoremap <silent> <Leader>f :nohl<CR>
-nnoremap <silent> <Leader>r :execute 'source '.bufname('%')<CR>
-nnoremap <silent> <Leader>v :source $MYVIMRC<CR>
-nnoremap <silent> <Leader>w :write<CR>
 
 " python-syntax
 let g:python_highlight_all = 1
@@ -59,6 +54,7 @@ let g:syntastic_loc_list_height = &lines/10
 let g:syntastic_python_checkers = ['flake8']
 
 " tagbar
+nnoremap <silent> <Leader>t :TagbarToggle<CR>
 
 " vim-colorschemes
 colorscheme gruvbox
@@ -74,6 +70,13 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_filepath_completion_use_working_dir = 1
+
+
+inoremap <silent> jj <Esc><CR>
+nnoremap <silent> <Leader>f :nohl<CR>
+nnoremap <silent> <Leader>r :execute 'source '.bufname('%')<CR>
+nnoremap <silent> <Leader>v :source $MYVIMRC<CR>
+nnoremap <silent> <Leader>w :write<CR>
 
 
 function! s:ResetCursorPos()
