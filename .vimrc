@@ -34,7 +34,6 @@ set scrolloff=0x5d
 set shiftwidth=4
 set smartindent
 set softtabstop=4
-set tabstop=4
 set textwidth=79
 
 
