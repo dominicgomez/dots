@@ -34,6 +34,7 @@ set scrolloff=0x5d
 set shiftwidth=4
 set smartindent
 set softtabstop=4
+set tabstop=8
 set textwidth=79
 
 
@@ -103,3 +104,6 @@ augroup readme
     autocmd!
     autocmd BufRead,BufNewFile README set filetype=markdown
 augroup END
+
+
+" vim:tw=79:ts=8:sts=4:sw=4:et:
