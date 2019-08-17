@@ -1,8 +1,18 @@
 # Dominic Gomez
 # $HOME/.zshrc
 
-#
+export WORKON_HOME="$HOME/.virtualenvs"
+export PROJECT_HOME="$HOME/devel"
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='-p python3 --no-site-packages'
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+export HISTFILE="$HOME/.zhist"
+export HISTSIZE=1028
+export SAVEHIST=128
+export EDITOR='vim'
+export VISUAL='mvim'
+export TERM='xterm-256color-italic'
+export PATH="/usr/local/bin:$PATH"
 
 # Options
 # -------
@@ -31,7 +41,7 @@ autoload -Uz venvinfo
 # Spacing between items in the command prompt is handled by each of the
 # functions used to build it.
 PROMPT='
-%F{blue}%~%f%F{white}$(branchinfo)%f%F{green}$(venvinfo)%f
+%F{blue}%~%f%F{yellow}$(branchinfo)%f%F{green}$(venvinfo)%f
 %F{magenta}❯%f '
 # ✗ = U+2717
 RPROMPT="%F{red}%0(?..✗✗✗)%f"
@@ -80,6 +90,7 @@ alias p::='pip show'
 alias pi='pip install'
 alias prm='pip uninstall'
 alias puu='pip install --upgrade'
+alias preq='pip freeze >requirements.txt'
 
 # External Scripts
 # ----------------
