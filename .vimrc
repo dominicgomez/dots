@@ -73,10 +73,14 @@ let g:ycm_filepath_completion_use_working_dir = 1
 
 
 inoremap <silent> jj <Esc><CR>
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
+nnoremap <silent> <Leader><Space> :bnext<CR>
 nnoremap <silent> <Leader>f :nohl<CR>
+nnoremap <silent> <Leader>q :bprevious<CR>
 nnoremap <silent> <Leader>r :execute 'source '.bufname('%')<CR>
 nnoremap <silent> <Leader>v :source $MYVIMRC<CR>
 nnoremap <silent> <Leader>w :write<CR>
+nnoremap <silent> <Leader>x :bdelete<CR>
 
 
 function! s:ResetCursorPos()
