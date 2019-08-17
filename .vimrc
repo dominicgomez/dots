@@ -72,7 +72,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_filepath_completion_use_working_dir = 1
 
 
-inoremap <silent> jj <Esc><CR>
+inoremap <silent> jj <Esc>
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 nnoremap <silent> <Leader><Space> :bnext<CR>
 nnoremap <silent> <Leader>f :nohl<CR>
