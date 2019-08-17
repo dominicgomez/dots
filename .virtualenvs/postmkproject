@@ -1,7 +1,0 @@
-#!/usr/local/bin/zsh
-# Dominic Gomez
-# $WORKON_HOME/postmkproject
-
-# This hook is sourced after a new project is activated.
-
-pip install jedi flake8
