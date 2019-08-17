@@ -1,6 +1,1 @@
-# Dominic Gomez
-# $HOME/.hushlogin
-
 # This file supresses the terminal's "Last login" message.
-
-# vim: set et wrap sw=4 sts=4 ts=4 tw=79:
