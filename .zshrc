@@ -1,7 +1,6 @@
 export EDITOR='vim'
 export HISTFILE="$HOME/.zhist"
 export HISTSIZE=1028
-export PATH="/usr/local/bin:$PATH"
 export PROJECT_HOME="$HOME/devel"
 export SAVEHIST=128
 export TERM='xterm-256color-italic'
