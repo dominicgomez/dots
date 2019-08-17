@@ -1,14 +1,5 @@
 #!/usr/bin/env zsh
 
-# Dominic Gomez
-# $HOME/.zfunc/venvinfo
-
-# *****************************************************************************
-# Functions whose names end in 'info' are used to append information to the
-# command prompt. The output of each such function must include a single
-# leading whitespace character.
-# *****************************************************************************
-
 # Get the active python virtual environment when possible.
 venvinfo() {
     if ! [ -z "$VIRTUAL_ENV" ]; then
@@ -16,4 +7,5 @@ venvinfo() {
     fi
 }
 
-# vim: set et wrap sw=4 sts=4 ts=4 tw=79:
+
+# vim:tw=79:ts=8:sts=4:sw=4:et:
