@@ -1,13 +1,9 @@
 export EDITOR='vim'
 export HISTFILE="$HOME/.zhist"
 export HISTSIZE=1028
-export PROJECT_HOME="$HOME/devel"
 export SAVEHIST=128
 export TERM='xterm-256color-italic'
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='-p python3 --no-site-packages'
 export VISUAL='mvim'
-export WORKON_HOME="$HOME/.virtualenvs"
 
 
 setopt promptsubst
@@ -16,13 +12,11 @@ setopt promptsubst
 fpath=(
     '/usr/local/share/zsh-completions'
     '/usr/local/share/zsh/site-functions'
-    "$HOME/.zfunc"
+    # "$HOME/.zfunc"
     ${fpath}
 )
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
-autoload -Uz branchinfo
-autoload -Uz venvinfo
 
 
 # FIXME: spacing issues
@@ -68,7 +62,6 @@ alias preq='pip freeze >requirements.txt'
 
 
 pfx='/usr/local'
-. "${pfx}/bin/virtualenvwrapper.sh"
 . "${pfx}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 . "${pfx}/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 . "${pfx}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
