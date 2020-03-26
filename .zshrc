@@ -19,9 +19,8 @@ autoload -Uz compinit && compinit
 autoload -Uz colors && colors
 
 
-# FIXME: spacing issues
 PROMPT='
-%F{blue}%~%f%F{yellow}$(branchinfo)%f%F{green}$(venvinfo)%f
+%F{blue}%~%f
 %F{magenta}❯%f '
 RPROMPT="%F{red}%0(?..✗✗✗)%f"
 PS2="%F{white}...%f "
