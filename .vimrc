@@ -2,7 +2,7 @@ syntax on
 
 
 call plug#begin('~/.vim/plugged')
-Plug 'hdima/python-syntax'
+Plug 'vim-python/python-syntax'
 Plug 'vim-syntastic/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'flazz/vim-colorschemes'
@@ -57,7 +57,7 @@ let g:syntastic_python_checkers = ['flake8']
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
 
 " vim-colorschemes
-colorscheme gruvbox
+colorscheme Tomorrow-Night-Bright
 
 " vim-commentary
 nmap <silent> <Leader>c gcc
