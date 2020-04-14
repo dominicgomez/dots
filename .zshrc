@@ -12,15 +12,13 @@ setopt promptsubst
 fpath=(
     '/usr/local/share/zsh-completions'
     '/usr/local/share/zsh/site-functions'
-    # "$HOME/.zfunc"
     ${fpath}
 )
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
 
 
-PROMPT='
-%F{blue}%~%f
+PROMPT='%F{blue}%~%f
 %F{magenta}❯%f '
 RPROMPT="%F{red}%0(?..✗✗✗)%f"
 PS2="%F{white}...%f "
@@ -38,7 +36,6 @@ alias dot="git --git-dir=$HOME/.dots --work-tree=$HOME"
 alias gc="$VISUAL $HOME/.gitconfig"
 alias gi="$VISUAL $HOME/.gitignore"
 alias gv="$VISUAL $HOME/.gvimrc"
-alias t="$VISUAL $HOME/.tmux.conf"
 alias v="$VISUAL $HOME/.vimrc"
 alias z="$VISUAL $HOME/.zshrc"
 
@@ -51,6 +48,8 @@ alias brm='brew uninstall'
 alias bu='brew update'
 alias buu='brew update && brew upgrade'
 
+alias python='python3'
+alias pip='pip3'
 alias pls='pip list'
 alias p:='pip search'
 alias p::='pip show'
@@ -60,10 +59,10 @@ alias puu='pip install --upgrade'
 alias preq='pip freeze >requirements.txt'
 
 
-pfx='/usr/local'
-. "${pfx}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-. "${pfx}/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
-. "${pfx}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+pfx='/usr/local/share/zsh-'
+source "${pfx}syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "${pfx}history-substring-search/zsh-history-substring-search.zsh"
+source "${pfx}autosuggestions/zsh-autosuggestions.zsh"
 
 
 bindkey '^ ' autosuggest-execute
