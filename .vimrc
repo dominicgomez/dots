@@ -54,7 +54,7 @@ let g:lightline = { 'colorscheme': 'gruvbox' }
 if has('gui_running')
     set antialias
     set background=dark
-    set columns=88
+    set columns=128
     set guifont=Hack-Regular:h14
     set guioptions-=L
     set guioptions-=r
