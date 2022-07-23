@@ -1,3 +1,6 @@
+bindkey '^l' autosuggest-accept
+bindkey '^ ' autosuggest-execute
+
 export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
 export TERM='xterm-256color-italic'
 export COLORTERM='xterm-256color-italic'
@@ -56,9 +59,3 @@ zsh_root='/opt/homebrew/share'
 . "/opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 . "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 . '/opt/homebrew/bin/virtualenvwrapper.sh'
-
-bindkey '^l' autosuggest-accept
-bindkey '^ ' autosuggest-execute
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-
