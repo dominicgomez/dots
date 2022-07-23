@@ -1,0 +1,8 @@
+[user]
+	name = Dominic Gomez
+	email = dominicgomez@users.noreply.github.com
+[core]
+	editor = vim
+	excludesfile = /Users/nic/.gitignore
+[init]
+	defaultBranch = main
