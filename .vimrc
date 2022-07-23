@@ -1,5 +1,3 @@
-" Dominic Gomez
-
 set nocompatible
 filetype plugin indent on
 
@@ -10,10 +8,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'frazrepo/vim-rainbow'
-Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'preservim/tagbar'
-Plug 'preservim/nerdtree'
 Plug 'flazz/vim-colorschemes'
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
