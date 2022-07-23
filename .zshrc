@@ -56,6 +56,14 @@ alias bls='brew list'
 alias bdoc='brew doctor'
 alias bclean='brew cleanup -s'
 
+alias p:='pip search'
+alias p::='pip show'
+alias pi='pip install'
+alias prm='pip uninstall'
+alias pu='pip install --upgrade'
+alias puu='pip install --upgrade pip'
+alias pls='pip list'
+
 zsh_root='/opt/homebrew/share'
 . "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 . "/opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
