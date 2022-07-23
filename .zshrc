@@ -1,5 +1,7 @@
 bindkey '^l' autosuggest-accept
 bindkey '^ ' autosuggest-execute
+bindkey '^H' beginning-of-line
+bindkey '^L' end-of-line
 
 export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
 export TERM='xterm-256color-italic'
