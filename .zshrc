@@ -1,4 +1,4 @@
-export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
 export TERM='xterm-256color-italic'
 export COLORTERM='xterm-256color-italic'
 export EDITOR='vim'
@@ -9,9 +9,9 @@ export SAVEHIST=2048
 export VIRTUALENVWRAPPER_PYTHON="$(which python3)"
 export WORKON_HOME="$HOME/.venvs"
 export PROJECT_HOME="$HOME/code"
+# add env vars for OCaml
 eval $(opam env)
 
-# FPATH:
 fpath=(
     '/opt/homebrew/completions/zsh/_brew'
     '/opt/homebrew/completions/zsh/_brew_cask'
