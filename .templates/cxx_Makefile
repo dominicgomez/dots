@@ -1,0 +1,33 @@
+SHELL = /bin/sh
+
+.SUFFIXES:
+.SUFFIXES: .hpp .cpp .o .d
+
+srcdir = ./src
+objdir = ./obj
+depdir = ./.dep
+bindir = ./bin
+
+srcs = $(wildcard $(srcdir)/*.cpp)
+objs = $(subst $(srcdir), $(objdir), $(patsubst %.cpp, %.o, $(srcs)))
+deps = $(subst $(objdir), $(depdir), $(patsubst %.o, %.d, $(objs)))
+bin = $(bindir)/main
+
+CXX = g++
+CXXFLAGS = -c -MMD -MF$(depdir)/$*.d -I$(srcdir) -x c++ -Wall -Wextra -std=c++17
+LDFLAGS =
+
+$(bin): $(objs)
+	$(CXX) $(LDFLAGS) $^ -o $@
+
+$(objdir)/%.o: $(srcdir)/%.cpp | .dep
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+.dep:
+	mkdir -p $@
+
+-include $(depdir)/*.d
+
+.PHONY: clean
+clean:
+	rm -rf $(objs) $(depdir) $(bin)
