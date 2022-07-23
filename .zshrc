@@ -1,7 +1,4 @@
-# $HOME/.zshrc
-
-# ENVIRONMENT VARIABLES:
-export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export TERM='xterm-256color-italic'
 export COLORTERM='xterm-256color-italic'
 export EDITOR='vim'
