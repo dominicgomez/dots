@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'ycm-core/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
 Plug 'itchyny/lightline.vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'frazrepo/vim-rainbow'
 Plug 'jmcantrell/vim-virtualenv'
@@ -50,7 +49,7 @@ if has('gui_running')
     set antialias
     set background=dark
     set columns=128
-    set guifont=Hack-Regular:h14
+    set guifont=Hermit-Regular:h14
     set guioptions-=L
     set guioptions-=r
     set lines=0xDA
