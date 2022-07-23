@@ -51,16 +51,13 @@ alias bls='brew list'
 alias bdoc='brew doctor'
 alias bclean='brew cleanup -s'
 
-# EXTERNAL SCRIPTS:
 zsh_root='/opt/homebrew/share'
-. "$zsh_root/zsh-autosuggestions/zsh-autosuggestions.zsh"
-. "$zsh_root/zsh-history-substring-search/zsh-history-substring-search.zsh"
-. "$zsh_root/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
+. "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+. "/opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+. "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 . '/opt/homebrew/bin/virtualenvwrapper.sh'
 
-# KEY BINDING:
-bindkey '^j' autosuggest-accept
+bindkey '^l' autosuggest-accept
 bindkey '^ ' autosuggest-execute
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
