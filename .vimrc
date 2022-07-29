@@ -12,7 +12,7 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'flazz/vim-colorschemes'
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
-Plug 'MagicStack/MagicPython'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Add merlin (for Ocaml) to vim's runtime path.
