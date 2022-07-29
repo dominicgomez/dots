@@ -11,7 +11,7 @@ export VISUAL="mvim"
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1024
 export SAVEHIST=2048
-export VIRTUALENVWRAPPER_PYTHON="$(which python3)"
+export VIRTUALENVWRAPPER_PYTHON='python3'
 export WORKON_HOME="$HOME/.venvs"
 export PROJECT_HOME="$HOME/code"
 # add env vars for OCaml

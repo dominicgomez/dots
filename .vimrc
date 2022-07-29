@@ -4,6 +4,7 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 Plug 'ycm-core/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
+Plug 'pulkomandy/c.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'frazrepo/vim-rainbow'
@@ -119,7 +120,7 @@ augroup END
 
 augroup py
     autocmd!
-    autocmd FileType python set textwidth=79
+    autocmd FileType python set columns=90 textwidth=79
 augroup END
 
 augroup readme
