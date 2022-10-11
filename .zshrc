@@ -56,16 +56,18 @@ alias bls='brew list'
 alias bdoc='brew doctor'
 alias bclean='brew cleanup -s'
 
-alias p:='pip search'
-alias p::='pip show'
-alias pi='pip install'
-alias prm='pip uninstall'
-alias pu='pip install --upgrade'
-alias puu='pip install --upgrade pip'
-alias pls='pip list'
+alias p:='pip3 search'
+alias p::='pip3 show'
+alias pi='pip3 install'
+alias prm='pip3 uninstall'
+alias pu='pip3 install --upgrade'
+alias puu='pip3 install --upgrade pip'
+alias pls='pip3 list'
 
 zsh_root='/opt/homebrew/share'
 . "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 . "/opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 . "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 . '/opt/homebrew/bin/virtualenvwrapper.sh'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
