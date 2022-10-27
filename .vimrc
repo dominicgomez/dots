@@ -50,7 +50,7 @@ let g:lightline = { 'colorscheme': 'jellybeans' }
 if has('gui_running')
     set antialias
     set background=dark
-    set columns=128
+    set columns=90
     set guifont=Hermit-Regular:h14
     set guioptions-=L
     set guioptions-=r
