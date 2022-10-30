@@ -90,6 +90,10 @@ CTestTestfile.cmake
 _deps
 # }}}
 
+# Doxygen
+docs
+Doxyfile
+
 # MacOS
 # {{{
 # General
