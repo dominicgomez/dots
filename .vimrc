@@ -66,6 +66,8 @@ set printfont=courier:h10
 set printheader=%F%=%N
 set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 
+let g:mapleader = ','
+
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_echo_current_error=1
@@ -85,7 +87,6 @@ let g:ycm_filepath_completion_use_working_dir=1
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_seed_identifiers_with_syntax=1
 
-let g:mapleader = ','
 inoremap jj <ESC>
 nnoremap <silent> <Leader>w :write<CR>
 nmap <silent> <Leader>c gcc

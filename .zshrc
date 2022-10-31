@@ -11,11 +11,11 @@ export VISUAL="mvim"
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1024
 export SAVEHIST=2048
-export VIRTUALENVWRAPPER_PYTHON='python3'
+export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
 export WORKON_HOME="$HOME/.venvs"
 export PROJECT_HOME="$HOME/code"
 # add env vars for OCaml
-eval $(opam env)
+# eval $(opam env)
 
 fpath=(
     '/opt/homebrew/completions/zsh/_brew'
@@ -65,7 +65,7 @@ alias puu='pip3 install --upgrade pip'
 alias pls='pip3 list'
 
 zsh_root='/opt/homebrew/share'
-. "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-. "/opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
-. "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+. "${zsh_root}/zsh-autosuggestions/zsh-autosuggestions.zsh"
+. "${zsh_root}/zsh-history-substring-search/zsh-history-substring-search.zsh"
+. "${zsh_root}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 . '/opt/homebrew/bin/virtualenvwrapper.sh'
