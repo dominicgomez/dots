@@ -69,3 +69,6 @@ zsh_root='/opt/homebrew/share'
 . "${zsh_root}/zsh-history-substring-search/zsh-history-substring-search.zsh"
 . "${zsh_root}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # . '/opt/homebrew/bin/virtualenvwrapper.sh'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
