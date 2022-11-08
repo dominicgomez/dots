@@ -11,9 +11,9 @@ export VISUAL="mvim"
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1024
 export SAVEHIST=2048
-# export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
-# export WORKON_HOME="$HOME/.venvs"
-# export PROJECT_HOME="$HOME/code"
+export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
+export WORKON_HOME="$HOME/.venvs"
+export PROJECT_HOME="$HOME/code"
 # add env vars for OCaml
 eval $(opam env)
 
@@ -68,7 +68,7 @@ zsh_root='/opt/homebrew/share'
 . "${zsh_root}/zsh-autosuggestions/zsh-autosuggestions.zsh"
 . "${zsh_root}/zsh-history-substring-search/zsh-history-substring-search.zsh"
 . "${zsh_root}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-# . '/opt/homebrew/bin/virtualenvwrapper.sh'
+. '/opt/homebrew/bin/virtualenvwrapper.sh'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
