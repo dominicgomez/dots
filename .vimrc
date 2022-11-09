@@ -9,10 +9,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'frazrepo/vim-rainbow'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'flazz/vim-colorschemes'
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 " Add merlin (for Ocaml) to vim's runtime path.
