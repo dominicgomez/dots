@@ -13,6 +13,8 @@ Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'nanotech/jellybeans.vim'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
 call plug#end()
 
 " Add merlin (for Ocaml) to vim's runtime path.
@@ -89,6 +91,8 @@ let g:ycm_seed_identifiers_with_syntax=1
 
 inoremap jj <ESC>
 nnoremap <silent> <Leader>w :write<CR>
+" reload current file
+nnoremap <silent> <Leader>r :source %
 nmap <silent> <Leader>c gcc
 vmap <silent> <Leader>c gc
 nmap <silent> <Leader>z za
