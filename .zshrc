@@ -3,7 +3,8 @@ bindkey '^ ' autosuggest-execute
 bindkey '^H' beginning-of-line
 bindkey '^L' end-of-line
 
-export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
+export JAVA_HOME='/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home'
+export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME:$PATH"
 export TERM='xterm-256color-italic'
 export COLORTERM='xterm-256color-italic'
 export EDITOR='vim'
