@@ -72,4 +72,3 @@ zsh_root='/opt/homebrew/share'
 . '/opt/homebrew/bin/virtualenvwrapper.sh'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
