@@ -3,18 +3,22 @@ bindkey '^ ' autosuggest-execute
 bindkey '^H' beginning-of-line
 bindkey '^L' end-of-line
 
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin'
-export PATH="$HOME/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME:$PATH"
-export TERM='xterm-256color-italic'
+BREW_PATHS='/opt/homebrew/bin:/opt/homebrew/sbin'
+LOCAL_PATHS='/usr/local/bin:/usr/local/sbin'
+
 export COLORTERM='xterm-256color-italic'
 export EDITOR='vim'
-export VISUAL="mvim"
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1024
-export SAVEHIST=2048
-export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
-export WORKON_HOME="$HOME/.venvs"
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin'
+export PATH="$BREW_PATHS:$LOCAL_PATHS:$JAVA_HOME:$PATH"
 export PROJECT_HOME="$HOME/code"
+export SAVEHIST=2048
+export TERM='xterm-256color-italic'
+export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
+export VISUAL="mvim"
+export WORKON_HOME="$HOME/.venvs"
+export XML_CATALOG_FILES="/opt/homebrew/Cellar/docbook/5.1_1/docbook/xml/5.1/schemas"
 # add env vars for OCaml
 eval $(opam env)
 
