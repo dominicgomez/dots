@@ -15,6 +15,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
+Plug 'jantimon/html-webpack-plugin'
+Plug 'systemjs/plugin-css'
 call plug#end()
 
 " Add merlin (for Ocaml) to vim's runtime path.
