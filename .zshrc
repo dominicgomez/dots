@@ -18,7 +18,6 @@ export TERM='xterm-256color-italic'
 export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
 export VISUAL="mvim"
 export WORKON_HOME="$HOME/.venvs"
-export XML_CATALOG_FILES="/opt/homebrew/Cellar/docbook/5.1_1/docbook/xml/5.1/schemas"
 # add env vars for OCaml
 eval $(opam env)
 
