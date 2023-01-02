@@ -17,6 +17,7 @@ Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
 Plug 'jantimon/html-webpack-plugin'
 Plug 'systemjs/plugin-css'
+Plug 'djoshea/vim-autoread'
 call plug#end()
 
 " Add merlin (for Ocaml) to vim's runtime path.
@@ -25,6 +26,7 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 set autochdir
 set autoindent
+set autoread
 set backspace=start,indent,eol
 set expandtab
 set foldmethod=marker
