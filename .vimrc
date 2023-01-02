@@ -55,7 +55,7 @@ if has('gui_running')
     set antialias
     set background=dark
     set columns=90
-    set guifont=Hermit-Regular:h14
+    set guifont=Hack-Regular:h13
     set guioptions-=L
     set guioptions-=r
     set lines=0xDA
