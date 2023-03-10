@@ -12,7 +12,7 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
-Plug 'nanotech/jellybeans.vim'
+Plug 'nanotech/dracula.vim'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
 Plug 'jantimon/html-webpack-plugin'
@@ -49,22 +49,23 @@ set laststatus=2
 set number
 " use 24-bit color
 set termguicolors
-colorscheme jellybeans
+colorscheme dracula
 " let g:gruvbox_contrast_dark = 'hard'
-let g:lightline = { 'colorscheme': 'jellybeans' }
+let g:lightline = { 'colorscheme': 'dracula' }
 
 if has('gui_running')
     set antialias
     set background=dark
     set columns=90
-    set guifont=Hack-Regular:h14
+    set guifont=HurmitNerdFontCompleteM-medium:h14
+    " set guifont=ProggyCleanTTSZNerdFontCompleteM-Regular:h20
     set guioptions-=L
     set guioptions-=r
     set lines=0xDA
 
-    colorscheme jellybeans
+    colorscheme dracula
     " let g:gruvbox_contrast_dark = 'hard'
-    let g:lightline = { 'colorscheme': 'jellybeans' }
+    let g:lightline = { 'colorscheme': 'dracula' }
 endif
 
 set printfont=courier:h10
