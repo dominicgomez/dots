@@ -113,6 +113,10 @@ nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
 nnoremap <silent> <C-l> <C-w><C-l>
 
+" vimdiff
+nnoremap <silent> <Leader>n ]c
+nnoremap <silent> <Leader><S-n> [c
+
 function! s:ResetCursorPosition()
     if line("'\"") > 1 && line("'\"") <= line("$")
         exe "normal! g`\""
