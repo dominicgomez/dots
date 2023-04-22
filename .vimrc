@@ -113,8 +113,6 @@ nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
 nnoremap <silent> <C-l> <C-w><C-l>
 
-" test comment
-
 " vimdiff
 nnoremap <silent> <Leader>n ]c
 nnoremap <silent> <Leader><S-n> [c
