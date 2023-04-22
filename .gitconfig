@@ -1,7 +1,7 @@
 [user]
 	name = Dominic Gomez
-	email = nicgom93@gmail.com
-	signingkey = 0853A683CA856A421A5A1DFA0B886043D9BBA811
+	email = dominicgomez@users.noreply.github.com
+	signingkey = 8815CA2E04A8C9D6D7F64F559674393A11E7BF05
 [core]
 	editor = vim
 	excludesfile = /Users/nic/.gitignore
