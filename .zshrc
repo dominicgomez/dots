@@ -8,6 +8,7 @@ LOCAL_PATHS='/usr/local/bin:/usr/local/sbin'
 
 export COLORTERM='xterm-256color-italic'
 export EDITOR='vim'
+export GPG_TTY="$(tty)"
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1024
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin'
