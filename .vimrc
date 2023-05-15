@@ -57,7 +57,8 @@ if has('gui_running')
     set antialias
     set background=dark
     set columns=90
-    set guifont=HurmitNerdFontCompleteM-medium:h14
+    set guifont=TerminessNFM:h14
+    " set guifont=HurmitNerdFontCompleteM-medium:h14
     " set guifont=ProggyCleanTTSZNerdFontCompleteM-Regular:h20
     set guioptions-=L
     set guioptions-=r
@@ -100,7 +101,10 @@ nnoremap <silent> <Leader>w :write<CR>
 nnoremap <silent> <Leader>r :source %
 nmap <silent> <Leader>c gcc
 vmap <silent> <Leader>c gc
-nmap <silent> <Leader>z za
+" nmap <silent> <Leader>z za
+nmap <silent> <Leader>z zA
+" Close all folds in a file
+nmap <silent> <Leader><S-z> zM
 nnoremap <silent> <Leader>f :nohl<CR>
 
 " nnoremap <Leader>b :buffers<CR>:buffer<Space>
