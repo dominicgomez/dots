@@ -69,6 +69,8 @@ alias pu='pip3 install --upgrade'
 alias puu='pip3 install --upgrade pip'
 alias pls='pip3 list'
 
+alias school="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/school"
+
 zsh_root='/opt/homebrew/share'
 . "${zsh_root}/zsh-autosuggestions/zsh-autosuggestions.zsh"
 . "${zsh_root}/zsh-history-substring-search/zsh-history-substring-search.zsh"
