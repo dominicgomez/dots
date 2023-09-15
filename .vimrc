@@ -9,15 +9,14 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'frazrepo/vim-rainbow'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
-Plug 'nanotech/dracula.vim'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
 Plug 'jantimon/html-webpack-plugin'
 Plug 'systemjs/plugin-css'
 Plug 'djoshea/vim-autoread'
+Plug 'lervag/vimtex'
 call plug#end()
 
 " Add merlin (for Ocaml) to vim's runtime path.
@@ -49,9 +48,9 @@ set laststatus=2
 set number
 " use 24-bit color
 set termguicolors
-colorscheme dracula
-" let g:gruvbox_contrast_dark = 'hard'
-let g:lightline = { 'colorscheme': 'dracula' }
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+let g:lightline = { 'colorscheme': 'gruvbox' }
 
 if has('gui_running')
     set antialias
@@ -64,9 +63,9 @@ if has('gui_running')
     set guioptions-=r
     set lines=0xDA
 
-    colorscheme dracula
-    " let g:gruvbox_contrast_dark = 'hard'
-    let g:lightline = { 'colorscheme': 'dracula' }
+    colorscheme gruvbox
+    let g:gruvbox_contrast_dark = 'hard'
+    let g:lightline = { 'colorscheme': 'gruvbox' }
 endif
 
 set printfont=courier:h10
