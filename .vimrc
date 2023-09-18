@@ -56,12 +56,17 @@ if has('gui_running')
     set antialias
     set background=dark
     set columns=90
-    set guifont=TerminessNFM:h14
-    " set guifont=HurmitNerdFontCompleteM-medium:h14
-    " set guifont=ProggyCleanTTSZNerdFontCompleteM-Regular:h20
     set guioptions-=L
     set guioptions-=r
     set lines=0xDA
+    " Both mac and linux will return true for `has('unix')`, but only mac will
+    " return true for `has('macunix')`, so check 'macunix' first.
+    " Mac and Debian fonts are named differently <_<
+    if has('macunix')
+        set guifont=Inconsolata-Regular:h14
+    elseif has('unix')
+        set guifont=Inconsolata\ Medium\ 14
+    endif
 
     colorscheme gruvbox
     let g:gruvbox_contrast_dark = 'hard'
