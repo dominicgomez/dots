@@ -6,7 +6,13 @@ bindkey '^L' end-of-line
 BREW_PATHS='/opt/homebrew/bin:/opt/homebrew/sbin'
 LOCAL_PATHS='/usr/local/bin:/usr/local/sbin'
 
-export COLORTERM='xterm-256color-italic'
+if [[ $(uname) == "Darwin" ]]; then
+    export COLORTERM='xterm-256color-italic'
+    export TERM='xterm-256color-italic'
+elif [[ $(uname) == "Linux" ]]; then
+    export COLORTERM='xterm-256color'
+    export TERM='xterm-256color'
+fi
 export EDITOR='vim'
 export GPG_TTY="$(tty)"
 export HISTFILE="$HOME/.zsh_history"
@@ -15,7 +21,6 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
 export PATH="$BREW_PATHS:$LOCAL_PATHS:$JAVA_HOME:$PATH"
 export PROJECT_HOME="$HOME/code"
 export SAVEHIST=2048
-export TERM='xterm-256color-italic'
 export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
 export VISUAL="mvim"
 export WORKON_HOME="$HOME/.venvs"
@@ -71,9 +76,11 @@ alias pls='pip3 list'
 
 alias school="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/school"
 
-zsh_root='/opt/homebrew/share'
-. "${zsh_root}/zsh-autosuggestions/zsh-autosuggestions.zsh"
-. "${zsh_root}/zsh-history-substring-search/zsh-history-substring-search.zsh"
-. "${zsh_root}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-. '/opt/homebrew/bin/virtualenvwrapper.sh'
-. "${HOME}/.iterm2_shell_integration.zsh"
+if [[ $(uname) == "Darwin" ]]; then
+    zsh_root='/opt/homebrew/share'
+    . "${zsh_root}/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    . "${zsh_root}/zsh-history-substring-search/zsh-history-substring-search.zsh"
+    . "${zsh_root}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    . '/opt/homebrew/bin/virtualenvwrapper.sh'
+    . "${HOME}/.iterm2_shell_integration.zsh"
+fi
