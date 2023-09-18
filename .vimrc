@@ -61,11 +61,14 @@ if has('gui_running')
     set lines=0xDA
     " Both mac and linux will return true for `has('unix')`, but only mac will
     " return true for `has('macunix')`, so check 'macunix' first.
-    " Mac and Debian fonts are named differently <_<
+    " Mac and Debian fonts are named differently. GUI options are also
+    " different.
     if has('macunix')
         set guifont=Inconsolata-Regular:h14
     elseif has('unix')
         set guifont=Inconsolata\ Medium\ 14
+        set guioptions-=m
+        set guioptions-=T
     endif
 
     colorscheme gruvbox
