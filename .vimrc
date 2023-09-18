@@ -59,10 +59,12 @@ if has('gui_running')
     set guioptions-=L
     set guioptions-=r
     set lines=0xDA
+    " Both mac and linux will return true for `has('unix')`, but only mac will
+    " return true for `has('macunix')`, so check 'macunix' first.
     " Mac and Debian fonts are named differently <_<
     if has('macunix')
         set guifont=Inconsolata-Regular:h14
-    elseif has('gui_gtk3')
+    elseif has('unix')
         set guifont=Inconsolata\ Medium\ 14
     endif
 
