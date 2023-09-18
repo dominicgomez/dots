@@ -1,3 +1,5 @@
+URxvt.scrollBar: false
+
 *.font: xft:Inconsolata:style=Medium:size=14
 *.boldFont: xft:Inconsolata:style=Bold:size=14
 *.italicFont: xft:Inconsolata:style=Italic:size=14
