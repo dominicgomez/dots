@@ -44,6 +44,9 @@ PS2="%F{white}...%f "
 alias dots="$(which git) --git-dir=$HOME/.dots --work-tree=$HOME"
 alias v="$VISUAL $HOME/.vimrc"
 alias z="$VISUAL $HOME/.zshrc"
+if [[ $(uname) == "Linux" ]]; then
+    alias X="$VISUAL $HOME/.Xresources"
+fi
 
 alias ..='cd ..'
 alias ...="source $HOME/.zshrc"
