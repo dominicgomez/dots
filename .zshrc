@@ -101,7 +101,7 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
-    alias school="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/school"
+    alias school="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/csusb"
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
