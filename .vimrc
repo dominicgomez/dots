@@ -41,7 +41,7 @@ set background=dark
 set colorcolumn=80,120
 set completeopt=menu,menuone,popuphidden
 set cursorcolumn
-set cursorline
+" set cursorline
 set hlsearch
 " 2 is always show statusline
 set laststatus=2
