@@ -17,6 +17,7 @@ Plug 'jantimon/html-webpack-plugin'
 Plug 'systemjs/plugin-css'
 Plug 'djoshea/vim-autoread'
 Plug 'lervag/vimtex'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 " Add merlin (for Ocaml) to vim's runtime path.
@@ -48,9 +49,11 @@ set laststatus=2
 set number
 " use 24-bit color
 set termguicolors
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme jellybeans
 let g:gruvbox_contrast_dark = 'hard'
-let g:lightline = { 'colorscheme': 'gruvbox' }
+" let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:lightline = { 'colorscheme': 'jellybeans' }
 
 if has('gui_running')
     set antialias
@@ -71,9 +74,11 @@ if has('gui_running')
         set guioptions-=T
     endif
 
-    colorscheme gruvbox
+    " colorscheme gruvbox
+    colorscheme jellybeans
     let g:gruvbox_contrast_dark = 'hard'
-    let g:lightline = { 'colorscheme': 'gruvbox' }
+    " let g:lightline = { 'colorscheme': 'gruvbox' }
+    let g:lightline = { 'colorscheme': 'jellybeans' }
 endif
 
 set printfont=courier:h10
