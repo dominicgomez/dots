@@ -16,7 +16,6 @@ if [[ $(uname) == "Darwin" ]]; then
     export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
     export VISUAL='mvim'
     export WORKON_HOME="$HOME/.venvs"
-
     # add env vars for OCaml
     eval $(opam env)
 elif [[ $(uname) == "Linux" ]]; then
