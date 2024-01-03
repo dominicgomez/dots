@@ -18,6 +18,7 @@ Plug 'systemjs/plugin-css'
 Plug 'djoshea/vim-autoread'
 Plug 'lervag/vimtex'
 Plug 'nanotech/jellybeans.vim'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " Add merlin (for Ocaml) to vim's runtime path.
@@ -42,6 +43,7 @@ set background=dark
 set colorcolumn=80,120
 set completeopt=menu,menuone,popuphidden
 set cursorcolumn
+" I think this causes major slowdowns.
 " set cursorline
 set hlsearch
 " 2 is always show statusline
@@ -49,19 +51,17 @@ set laststatus=2
 set number
 " use 24-bit color
 set termguicolors
-" colorscheme gruvbox
 colorscheme jellybeans
 let g:gruvbox_contrast_dark = 'hard'
-" let g:lightline = { 'colorscheme': 'gruvbox' }
 let g:lightline = { 'colorscheme': 'jellybeans' }
 
 if has('gui_running')
     set antialias
     set background=dark
-    set columns=90
+    set columns=9999
     set guioptions-=L
     set guioptions-=r
-    set lines=0xDA
+    set lines=9999
     " Both mac and linux will return true for `has('unix')`, but only mac will
     " return true for `has('macunix')`, so check 'macunix' first.
     " Mac and Debian fonts are named differently. GUI options are also
@@ -73,11 +73,8 @@ if has('gui_running')
         set guioptions-=m
         set guioptions-=T
     endif
-
-    " colorscheme gruvbox
     colorscheme jellybeans
     let g:gruvbox_contrast_dark = 'hard'
-    " let g:lightline = { 'colorscheme': 'gruvbox' }
     let g:lightline = { 'colorscheme': 'jellybeans' }
 endif
 
@@ -87,6 +84,8 @@ set printheader=%F%=%N
 set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 
 let g:mapleader = ','
+
+let g:NERDTreeShowHidden=1
 
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
@@ -110,7 +109,7 @@ let g:ycm_seed_identifiers_with_syntax=1
 inoremap jj <ESC>
 nnoremap <silent> <Leader>w :write<CR>
 " reload current file
-nnoremap <silent> <Leader>r :source %
+nnoremap <silent> <Leader>r :source %<CR>
 nmap <silent> <Leader>c gcc
 vmap <silent> <Leader>c gc
 " nmap <silent> <Leader>z za
@@ -123,6 +122,10 @@ nnoremap <silent> <Leader>f :nohl<CR>
 " nnoremap <silent> <Leader><Space> :bnext<CR>
 " nnoremap <silent> <Leader>q :bprevious<CR>
 " nnoremap <silent> <Leader>x :bdelete<CR>
+
+nmap <silent> <Leader><Space> gt
+nmap <silent> <Leader>q gT
+nmap <silent> <Leader>x :write<CR>:tabclose<CR>
 
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
@@ -147,11 +150,35 @@ augroup basic
     autocmd!
     autocmd BufRead * call s:ResetCursorPosition()
     autocmd BufWritePre * call s:StripTrailingWhitespace()
+    " Start NERDTree. If a file is specified, move the cursor to its window.
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+    " Exit Vim if NERDTree is the only window remaining in the only tab.
+    autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+    " Close the tab if NERDTree is the only window remaining in it.
+    autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+    " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+    autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+        \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+    " Open the existing NERDTree on each new tab.
+    autocmd TabEnter,BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
 augroup END
 
 augroup py
     autocmd!
-    autocmd FileType python set columns=90 textwidth=79
+    autocmd FileType python set textwidth=79
+augroup END
+
+augroup readme
+    autocmd!
+    autocmd BufRead,BufNewFile README set filetype=markdown
+augroup END
+
+augroup web
+    autocmd!
+    autocmd FileType html set shiftwidth=2 softtabstop=2
+    autocmd FileType css set shiftwidth=2 softtabstop=2
+    autocmd FileType javascript set shiftwidth=2 softtabstop=2
 augroup END
 
 augroup readme
