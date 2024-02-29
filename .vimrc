@@ -32,7 +32,7 @@ set backspace=start,indent,eol
 set expandtab
 set foldmethod=marker
 set mouse=a
-set scrolloff=999
+" set scrolloff=999
 set shiftwidth=4
 set smartindent
 set softtabstop=4
