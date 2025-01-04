@@ -4,26 +4,14 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 Plug 'ycm-core/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
-Plug 'pulkomandy/c.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'frazrepo/vim-rainbow'
-Plug 'jmcantrell/vim-virtualenv'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
-Plug 'jantimon/html-webpack-plugin'
-Plug 'systemjs/plugin-css'
-Plug 'djoshea/vim-autoread'
 Plug 'lervag/vimtex'
 Plug 'nanotech/jellybeans.vim'
-Plug 'preservim/nerdtree'
 call plug#end()
-
-" Add merlin (for Ocaml) to vim's runtime path.
-let g:opamshare = substitute(system('opam var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 set autochdir
 set autoindent
@@ -84,8 +72,6 @@ set printheader=%F%=%N
 set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 
 let g:mapleader = ','
-
-let g:NERDTreeShowHidden=1
 
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
@@ -150,35 +136,11 @@ augroup basic
     autocmd!
     autocmd BufRead * call s:ResetCursorPosition()
     autocmd BufWritePre * call s:StripTrailingWhitespace()
-    " Start NERDTree. If a file is specified, move the cursor to its window.
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-    " Exit Vim if NERDTree is the only window remaining in the only tab.
-    autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-    " Close the tab if NERDTree is the only window remaining in it.
-    autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-    " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-    autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-        \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-    " Open the existing NERDTree on each new tab.
-    autocmd TabEnter,BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
 augroup END
 
 augroup py
     autocmd!
     autocmd FileType python set textwidth=79
-augroup END
-
-augroup readme
-    autocmd!
-    autocmd BufRead,BufNewFile README set filetype=markdown
-augroup END
-
-augroup web
-    autocmd!
-    autocmd FileType html set shiftwidth=2 softtabstop=2
-    autocmd FileType css set shiftwidth=2 softtabstop=2
-    autocmd FileType javascript set shiftwidth=2 softtabstop=2
 augroup END
 
 augroup readme
