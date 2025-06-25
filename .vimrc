@@ -2,14 +2,13 @@ set nocompatible
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
-Plug 'ycm-core/YouCompleteMe' "code completion
-Plug 'dense-analysis/ale' "linting
-Plug 'itchyny/lightline.vim' "statusline
-Plug 'tpope/vim-commentary' "easy (un)commenting
-Plug 'frazrepo/vim-rainbow' "rainbow parentheses
 Plug 'morhetz/gruvbox' "colorscheme
-Plug 'lervag/vimtex'
-Plug 'davidhalter/jedi-vim'
+Plug 'itchyny/lightline.vim' "statusline
+Plug 'frazrepo/vim-rainbow' "rainbow parentheses
+Plug 'tpope/vim-commentary' "easy (un)commenting
+Plug 'davidhalter/jedi-vim' "Python code completion
+Plug 'dense-analysis/ale' "linting
+Plug 'lervag/vimtex' "LaTeX plugin
 call plug#end()
 
 set autochdir
@@ -71,16 +70,6 @@ set printheader=%F%=%N
 set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 
 let g:mapleader = ','
-
-let g:ycm_auto_hover=''
-let g:ycm_collect_identifiers_from_comments_and_strings=1
-let g:ycm_complete_in_comments=1
-let g:ycm_complete_in_strings=1
-let g:ycm_confirm_extra_conf=0
-let g:ycm_enable_diagnostic_highlighting=1
-let g:ycm_filepath_completion_use_working_dir=1
-let g:ycm_min_num_of_chars_for_completion=1
-let g:ycm_seed_identifiers_with_syntax=1
 
 inoremap jj <ESC>
 nnoremap <silent> <Leader>w :write<CR>
