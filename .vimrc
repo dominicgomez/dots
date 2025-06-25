@@ -38,9 +38,8 @@ set laststatus=2
 set number
 " use 24-bit color
 set termguicolors
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-let g:lightline = { 'colorscheme': 'gruvbox' }
+colorscheme PaperColor
+let g:lightline = {'colorscheme': 'PaperColor'}
 
 if has('gui_running')
     set antialias
@@ -60,9 +59,8 @@ if has('gui_running')
         set guioptions-=m
         set guioptions-=T
     endif
-    colorscheme gruvbox
-    let g:gruvbox_contrast_dark = 'hard'
-    let g:lightline = { 'colorscheme': 'gruvbox' }
+    colorscheme PaperColor
+    let g:lightline = { 'colorscheme': 'PaperColor' }
 endif
 
 set printfont=courier:h10
