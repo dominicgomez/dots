@@ -72,15 +72,6 @@ set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 
 let g:mapleader = ','
 
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=0
-let g:syntastic_echo_current_error=1
-let g:syntastic_cursor_columns=0
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=8
-let g:syntastic_python_checkers=['flake8']
-
 let g:ycm_auto_hover=''
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_complete_in_comments=1
