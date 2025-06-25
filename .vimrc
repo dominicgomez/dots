@@ -2,11 +2,12 @@ set nocompatible
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox' "colorscheme
+Plug 'flazz/vim-colorschemes' "colorschemes
 Plug 'itchyny/lightline.vim' "statusline
 Plug 'frazrepo/vim-rainbow' "rainbow parentheses
 Plug 'tpope/vim-commentary' "easy (un)commenting
 Plug 'davidhalter/jedi-vim' "Python code completion
+Plug 'sheerun/vim-polyglot' "Python language pack
 Plug 'dense-analysis/ale' "linting
 Plug 'lervag/vimtex' "LaTeX plugin
 call plug#end()
