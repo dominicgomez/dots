@@ -6,11 +6,11 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
-Plug 'frazrepo/vim-rainbow'
+Plug 'frazrepo/vim-rainbow' " rainbow parentheses
 Plug 'morhetz/gruvbox'
-Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'nanotech/jellybeans.vim'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 set autochdir
@@ -41,7 +41,7 @@ set number
 set termguicolors
 colorscheme jellybeans
 let g:gruvbox_contrast_dark = 'hard'
-let g:lightline = { 'colorscheme': 'jellybeans' }
+let g:lightline = { 'colorscheme': 'gruvbox' }
 
 if has('gui_running')
     set antialias
