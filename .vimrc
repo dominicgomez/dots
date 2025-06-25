@@ -38,8 +38,8 @@ set laststatus=2
 set number
 " use 24-bit color
 set termguicolors
-colorscheme PaperColor
-let g:lightline = {'colorscheme': 'PaperColor'}
+colorscheme Tomorrow-Night
+let g:lightline = {'colorscheme': 'Tomorrow_Night'}
 
 if has('gui_running')
     set antialias
@@ -59,8 +59,8 @@ if has('gui_running')
         set guioptions-=m
         set guioptions-=T
     endif
-    colorscheme PaperColor
-    let g:lightline = { 'colorscheme': 'PaperColor' }
+    colorscheme Tomorrow-Night
+    let g:lightline = { 'colorscheme': 'Tomorrow_Night' }
 endif
 
 set printfont=courier:h10
