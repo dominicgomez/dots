@@ -2,14 +2,13 @@ set nocompatible
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
-Plug 'ycm-core/YouCompleteMe'
-Plug 'vim-syntastic/syntastic'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-commentary'
-Plug 'frazrepo/vim-rainbow' " rainbow parentheses
-Plug 'morhetz/gruvbox'
+Plug 'ycm-core/YouCompleteMe' "code completion
+Plug 'dense-analysis/ale' "linting
+Plug 'itchyny/lightline.vim' "statusline
+Plug 'tpope/vim-commentary' "easy (un)commenting
+Plug 'frazrepo/vim-rainbow' "rainbow parentheses
+Plug 'morhetz/gruvbox' "colorscheme
 Plug 'lervag/vimtex'
-Plug 'nanotech/jellybeans.vim'
 Plug 'davidhalter/jedi-vim'
 call plug#end()
 
@@ -39,7 +38,7 @@ set laststatus=2
 set number
 " use 24-bit color
 set termguicolors
-colorscheme jellybeans
+colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 let g:lightline = { 'colorscheme': 'gruvbox' }
 
@@ -55,15 +54,15 @@ if has('gui_running')
     " Mac and Debian fonts are named differently. GUI options are also
     " different.
     if has('macunix')
-        set guifont=Inconsolata-Regular:h14
+        set guifont=Hack-Regular:h14
     elseif has('unix')
         set guifont=Inconsolata\ Medium\ 14
         set guioptions-=m
         set guioptions-=T
     endif
-    colorscheme jellybeans
+    colorscheme gruvbox
     let g:gruvbox_contrast_dark = 'hard'
-    let g:lightline = { 'colorscheme': 'jellybeans' }
+    let g:lightline = { 'colorscheme': 'gruvbox' }
 endif
 
 set printfont=courier:h10
