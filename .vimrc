@@ -53,7 +53,7 @@ if has('gui_running')
     " Mac and Debian fonts are named differently. GUI options are also
     " different.
     if has('macunix')
-        set guifont=Hack-Regular:h14
+        set guifont=Agave-Regular:h16
     elseif has('unix')
         set guifont=Inconsolata\ Medium\ 14
         set guioptions-=m
