@@ -6,9 +6,10 @@ Plug 'flazz/vim-colorschemes' "colorschemes
 Plug 'itchyny/lightline.vim' "statusline
 Plug 'frazrepo/vim-rainbow' "rainbow parentheses
 Plug 'tpope/vim-commentary' "easy (un)commenting
+Plug 'ervandew/supertab' "autocomplete with <Tab>
 Plug 'davidhalter/jedi-vim' "Python code completion
-Plug 'sheerun/vim-polyglot' "Python language pack
 Plug 'dense-analysis/ale' "linting
+Plug 'sheerun/vim-polyglot' "several language packs
 Plug 'lervag/vimtex' "LaTeX plugin
 call plug#end()
 
@@ -19,7 +20,7 @@ set backspace=start,indent,eol
 set expandtab
 set foldmethod=marker
 set mouse=a
-" set scrolloff=999
+" set scrolloff=0x5D
 set shiftwidth=4
 set smartindent
 set softtabstop=4
@@ -28,18 +29,16 @@ set tabstop=8
 syntax on
 set background=dark
 set colorcolumn=80,120
-set completeopt=menu,menuone,popuphidden
+" set completeopt=menu,menuone,popuphidden
+set completeopt=menuone
 set cursorcolumn
-" I think this causes major slowdowns.
-" set cursorline
+set cursorline
 set hlsearch
-" 2 is always show statusline
-set laststatus=2
-set number
-" use 24-bit color
-set termguicolors
-colorscheme Tomorrow-Night
-let g:lightline = {'colorscheme': 'Tomorrow_Night'}
+set laststatus=2 "always show statusline
+set number "line numbers
+set termguicolors "24-bit color
+colorscheme vim-material
+let g:lightline = {'colorscheme': 'material'}
 
 if has('gui_running')
     set antialias
@@ -59,8 +58,8 @@ if has('gui_running')
         set guioptions-=m
         set guioptions-=T
     endif
-    colorscheme Tomorrow-Night
-    let g:lightline = { 'colorscheme': 'Tomorrow_Night' }
+    colorscheme vim-material
+    let g:lightline = { 'colorscheme': 'material' }
 endif
 
 set printfont=courier:h10
@@ -69,6 +68,9 @@ set printheader=%F%=%N
 set printoptions=left:36pt,right:36pt,top:36pt,bottom:36pt,header:1,number:y
 
 let g:mapleader = ','
+
+let g:jedi#show_call_signatures = "1"
+let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
 
 inoremap jj <ESC>
 nnoremap <silent> <Leader>w :write<CR>
