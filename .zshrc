@@ -11,7 +11,7 @@ fi
 if [[ $(uname) == "Darwin" ]]; then
     export COLORTERM='xterm-256color-italic'
     export JAVA_HOME='/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin'
-    export PATH="$BREW_PATHS:$LOCAL_PATHS:$JAVA_HOME:$PATH"
+    export PATH="$BREW_PATHS:$LOCAL_PATHS:$PATH"
     export TERM='xterm-256color-italic'
     export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
     export VISUAL='mvim'
@@ -111,3 +111,6 @@ if [[ $(uname) == "Darwin" ]]; then
     . '/opt/homebrew/bin/virtualenvwrapper.sh'
     . "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+[ -f "/Users/nic/.ghcup/env" ] && . "/Users/nic/.ghcup/env" # ghcup-env
+
