@@ -14,7 +14,6 @@ export VIRTUALENVWRAPPER_PYTHON='/opt/homebrew/bin/python3'
 export VISUAL='mvim'
 export WORKON_HOME="$HOME/.venvs"
 # add env vars for OCaml
-eval $(opam env)
 export EDITOR='vim'
 export GPG_TTY="$(tty)"
 export HISTFILE="$HOME/.zsh_history"
