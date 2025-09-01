@@ -37,8 +37,8 @@ set hlsearch
 set laststatus=2 "always show statusline
 set number "line numbers
 set termguicolors "24-bit color
-colorscheme vim-material
-let g:lightline = {'colorscheme': 'material'}
+colorscheme jellybeans
+let g:lightline = {'colorscheme': 'jellybeans'}
 
 if has('gui_running')
     set antialias
@@ -47,19 +47,9 @@ if has('gui_running')
     set guioptions-=L
     set guioptions-=r
     set lines=9999
-    " Both mac and linux will return true for `has('unix')`, but only mac will
-    " return true for `has('macunix')`, so check 'macunix' first.
-    " Mac and Debian fonts are named differently. GUI options are also
-    " different.
-    if has('macunix')
-        set guifont=Agave-Regular:h16
-    elseif has('unix')
-        set guifont=Inconsolata\ Medium\ 14
-        set guioptions-=m
-        set guioptions-=T
-    endif
-    colorscheme vim-material
-    let g:lightline = { 'colorscheme': 'material' }
+    set guifont=Hack-Regular:h14
+    colorscheme jellybeans
+    let g:lightline = { 'colorscheme': 'jellybeans' }
 endif
 
 set printfont=courier:h10
@@ -126,11 +116,4 @@ augroup END
 augroup readme
     autocmd!
     autocmd BufRead,BufNewFile README set filetype=markdown
-augroup END
-
-augroup web
-    autocmd!
-    autocmd FileType html set shiftwidth=2 softtabstop=2
-    autocmd FileType css set shiftwidth=2 softtabstop=2
-    autocmd FileType javascript set shiftwidth=2 softtabstop=2
 augroup END
