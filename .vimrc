@@ -50,14 +50,9 @@ set foldmethod=marker
 set laststatus=2
 set number
 " gui
-if has('gui_running')
-    set columns=9999
-    set guifont=Hack-Regular:h14
-    set guioptions-=L
-    set guioptions-=r
-    set lines=9999
-    set guifont=Hack-Regular:h14
-endif
+set guifont=Hack-Regular:h14
+set guioptions-=L
+set guioptions-=r
 " colors
 syntax on
 colorscheme jellybeans
