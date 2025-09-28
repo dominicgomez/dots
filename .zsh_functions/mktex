@@ -1,3 +1,23 @@
 #!/usr/bin/env zsh
 
-echo "this is mktex"
+if [[ "$#" -eq 1 ]]; then
+    local paper="$1"
+    # generate -blx.bib, .aux, .dvi, .log, .out, .run.xml, and .toc.
+    latex "${paper}".tex; if [[ "$?" -ne 0 ]]; then
+        rm -f "${paper}"{'-blx.bib',.aux,.dvi,'.log',.out,.run.xml,.toc}
+        return 1
+    fi
+    # generate .bbl and .blg
+    bibtex "$paper"; if [[ "$?" -ne 0 ]]; then
+        rm -f "${paper}".{bbl,blg}
+        return 1
+    fi
+    latex "${paper}".tex; if [[ "$?" -ne 0 ]]; then; return 1; fi
+    latex "${paper}".tex; if [[ "$?" -ne 0 ]]; then; return 1; fi
+    # generate .pdf
+    dvipdf "${paper}".dvi; if [[ "$?" -ne 0 ]]; then; return 1; fi
+    # clean up
+    rm "${paper}"{.aux,'-blx.bib',.bbl,.blg,.dvi,'.log',.out,.run.xml,.toc}
+else; return 1; fi
+
+return 0
