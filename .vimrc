@@ -108,6 +108,11 @@ augroup basic
     autocmd BufWritePre * call s:StripTrailingWhitespace()
 augroup END
 
+augroup math
+    autocmd!
+    autocmd FileType tex set textwidth=119
+augroup END
+
 augroup py
     autocmd!
     autocmd FileType python set textwidth=79
