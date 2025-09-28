@@ -1,3 +1,5 @@
+" functions
+" ---------
 function! s:ResetCursorPosition()
     if line("'\"") > 1 && line("'\"") <= line("$")
         exe "normal! g`\""
@@ -8,16 +10,19 @@ function! s:StripTrailingWhitespace()
     silent! %s/\s\+$//e
 endfunction
 
+" plugins
+" -------
 call plug#begin('~/.vim/plugged')
-Plug 'dense-analysis/ale' "linting
-Plug 'davidhalter/jedi-vim' "Python code completion
-Plug 'ervandew/supertab' "autocomplete with <Tab>
-Plug 'flazz/vim-colorschemes' "colorschemes
-Plug 'frazrepo/vim-rainbow' "rainbow parentheses
-Plug 'itchyny/lightline.vim' "statusline
-Plug 'lervag/vimtex' "LaTeX plugin
-Plug 'sheerun/vim-polyglot' "several language packs
-Plug 'tpope/vim-commentary' "easy (un)commenting
+Plug 'dense-analysis/ale' " for linting
+Plug 'davidhalter/jedi-vim' " for Python code completion
+Plug 'dracula/vim' " for dracula colorscheme
+Plug 'ervandew/supertab' " for autocompletion with <Tab>
+Plug 'flazz/vim-colorschemes' " for colorschemes
+Plug 'frazrepo/vim-rainbow' " for rainbow parentheses
+Plug 'itchyny/lightline.vim' " for statusline
+Plug 'lervag/vimtex' " for LaTeX
+Plug 'sheerun/vim-polyglot' " for syntax and indentation support
+Plug 'tpope/vim-commentary' " for easy (un)commenting
 call plug#end()
 
 " keys
@@ -55,8 +60,8 @@ set guioptions-=L
 set guioptions-=r
 " colors
 syntax on
-colorscheme jellybeans
-let g:lightline = {'colorscheme': 'jellybeans'}
+colorscheme dracula
+let g:lightline = {'colorscheme': 'wombat'}
 set background=dark
 set colorcolumn=80,120
 set cursorcolumn
