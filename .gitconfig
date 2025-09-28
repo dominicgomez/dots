@@ -4,6 +4,7 @@
         signingkey = 32FDCD081456A798
 [core]
 	editor = vim
+        excludesfile = ~/.gitignore
 [init]
 	defaultBranch = main
 [gpg]
