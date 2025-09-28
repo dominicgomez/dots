@@ -1,17 +1,17 @@
 [user]
-	name = dominicgomez
-	email = dominicgomez@users.noreply.github.com
-        signingkey = 32FDCD081456A798
+    name = dominicgomez
+    email = dominicgomez@users.noreply.github.com
+    signingkey = 32FDCD081456A798
 [core]
-	editor = vim
-        excludesfile = ~/.gitignore
+    editor = vim
+    excludesfile = ~/.gitignore
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [gpg]
-	program = gpg
+    program = gpg
 [commit]
-	gpgsign = true
+    gpgsign = true
 [credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
+    helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+    useHttpPath = true
