@@ -1,3 +1,16 @@
 #!/usr/bin/env zsh
 
-echo "this is newtex!"
+usage() {
+    print "usage: "
+}
+
+if [[ "$#" -eq 1 ]]; then
+    local proj="$1"
+    if ! [[ -d "$proj" ]]; then
+        print "creating directory "$proj""
+    else
+        print "directory "$proj" already exists"
+    fi
+else
+    usage
+fi
