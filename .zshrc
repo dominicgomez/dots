@@ -9,7 +9,7 @@ fpath=(
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
 autoload -Uz newtex
-autoload -Uz mktex
+autoload -Uz tex2pdf
 
 # plugins
 # -------

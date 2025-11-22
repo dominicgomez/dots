@@ -1,0 +1,40 @@
+#!/usr/bin/env zsh
+# Compile a LaTeX document.
+
+# If exactly 2 arguments...
+if [[ "$#" -eq 2 ]]; then
+    # If the source file exists...
+    if [[ -a "$1" ]]; then
+        local basename="${1%%.*}" # no file extension
+        local docname="${2}"
+
+        # generate -blx.bib, .aux, .dvi, .log, .out, .run.xml, and .toc.
+        pdflatex --halt-on-error -jobname "${docname}" "${basename}".tex 1>/dev/null; if [[ "$?" -ne 0 ]]; then
+            rm -f "${basename}"{.aux,'.log',.out,.run.xml,.toc}
+            return 1
+        fi
+        # generate .bbl and .blg
+        biber "$basename" 1>/dev/null; if [[ "$?" -ne 0 ]]; then
+            rm -f "${basename}".{bbl,blg}
+            return 1
+        fi
+        pdflatex --halt-on-error -jobname "${docname}" "${basename}".tex 1>/dev/null; if [[ "$?" -ne 0 ]]; then; return 1; fi
+        pdflatex --halt-on-error -jobname "${docname}" "${basename}".tex 1>/dev/null; if [[ "$?" -ne 0 ]]; then; return 1; fi
+        # generate .pdf
+
+        # dvipdf "${basename}".dvi; if [[ "$?" -ne 0 ]]; then; return 1; fi
+
+        # clean up
+        rm "${basename}"{.aux,.bbl,.bcf,.blg,.out,.run.xml,.toc}
+        # rm "${basename}"{.aux,'-blx.bib',.bbl,.bcf,.blg,.dvi,'.log',.out,.run.xml,.toc}
+        rm -f "texput.log"
+    else
+        printf "ERROR: \n" >&2
+        return 1
+    fi
+else
+    printf "Usage: %s FILENAME\n" "tex2pdf"
+    return 1
+fi
+
+return 0
