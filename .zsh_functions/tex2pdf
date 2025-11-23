@@ -2,40 +2,39 @@
 # -----------------------------------------------------------------------------
 # Compile a LaTeX document.
 #
-#   Usage: tex2pdf main.tex
+#   Usage: tex2pdf FILENAME
 # -----------------------------------------------------------------------------
 
-# If exactly 2 arguments...
-if [[ "$#" -eq 2 ]]; then
+# If exactly 1 argument...
+if [[ "$#" -eq 1 ]]; then
     # If the source file exists...
     if [[ -a "$1" ]]; then
         local tex="${1%%.*}" # name of .tex file without extension
-        local doc="${2}" # name of .pdf file to generatee
 
         # Generates .aux, .bcf, .log, .out, .pdf, .run.xml, and .toc files
-        pdflatex --halt-on-error -jobname "${doc}" "${tex}".tex 1>/dev/null
+        pdflatex --halt-on-error "${tex}".tex 1>/dev/null
         if [[ "$?" -ne 0 ]]; then
             return 1
         fi
         local exts=(".aux" ".bcf" ".log" ".out" ".run.xml" ".toc")
 
         # Generates .bbl and .blg files
-        biber "${doc}" 1>/dev/null
+        biber "${tex}" 1>/dev/null
         if [[ "$?" -ne 0 ]]; then
             return 1
         fi
         exts+=(".bbl" ".blg")
 
         # I'm not sure why it's necessary to run `pdflatex' twice, but it is
-        pdflatex --halt-on-error -jobname "${doc}" "${tex}".tex 1>/dev/null
-        pdflatex --halt-on-error -jobname "${doc}" "${tex}".tex 1>/dev/null
+        pdflatex --halt-on-error "${tex}".tex 1>/dev/null
+        pdflatex --halt-on-error "${tex}".tex 1>/dev/null
         if [[ "$?" -ne 0 ]]; then
             return 1
         fi
 
         # Delete intermediary files
         for ext in "${exts[@]}"; do
-            rm -f "${doc}""${ext}"
+            rm -f "${tex}""${ext}"
         done
     else
         return 1
