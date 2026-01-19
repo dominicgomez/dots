@@ -55,7 +55,7 @@ set foldmethod=marker
 set laststatus=2
 set number
 " gui
-set guifont=Agave-Regular:h16
+set guifont=Inconsolata-Regular:h16
 set guioptions-=L
 set guioptions-=r
 " colors
