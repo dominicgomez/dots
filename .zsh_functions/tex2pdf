@@ -1,15 +1,16 @@
 #!/usr/bin/env zsh
-# -----------------------------------------------------------------------------
+
 # Compile a LaTeX document.
 #
 #   Usage: tex2pdf FILENAME
-# -----------------------------------------------------------------------------
 
-# If exactly 1 argument...
+# If exactly 1 argument (.tex file)...
 if [[ "$#" -eq 1 ]]; then
     # If the source file exists...
     if [[ -a "$1" ]]; then
         local tex="${1%%.*}" # name of .tex file without extension
+
+        echo "Compiling..."
 
         # Generates .aux, .bcf, .log, .out, .pdf, .run.xml, and .toc files
         pdflatex --halt-on-error "${tex}".tex 1>/dev/null
@@ -32,6 +33,7 @@ if [[ "$#" -eq 1 ]]; then
             return 1
         fi
 
+        echo "Cleaning up..."
         # Delete intermediary files
         for ext in "${exts[@]}"; do
             rm -f "${tex}""${ext}"
@@ -43,4 +45,5 @@ else
     return 1
 fi
 
+echo "Done."
 return 0
