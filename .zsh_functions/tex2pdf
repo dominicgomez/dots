@@ -16,17 +16,17 @@ if [[ "$#" -eq 1 ]]; then # if exactly 1 arg (path to .tex file to compile)...
 
             cd "$texpath"
 
-            printf 'compiling...'
+            # printf 'compiling...'
             # generates .aux, .bcf, .log, .out, .pdf, .run.xml, and .toc files
             pdflatex "$pdflatex_args[@]" "$texfile" 1>/dev/null
             if [[ "$?" -ne 0 ]]; then # if pdflatex returned an error value...
-                echo "error: pdflatex failed to generate .pdf from "${abspath}""
+                echo "error: pdflatex failed to generate .pdf from "$abspath""
                 cd - 1>/dev/null
                 return 1
             fi
             local exts=('.aux' '.bcf' '.log' '.out' '.run.xml' '.toc')
 
-            printf 'generating bibliography...'
+            # printf 'generating bibliography...'
             # generates .bbl and .blg files
             biber "$texname" 1>/dev/null
             if [[ "$?" -ne 0 ]]; then # if biber returned an error value...
@@ -45,7 +45,7 @@ if [[ "$#" -eq 1 ]]; then # if exactly 1 arg (path to .tex file to compile)...
                 return 1
             fi
 
-            printf "cleaning up..."
+            # printf "cleaning up..."
             # Delete intermediary files
             for ext in "$exts[@]"; do
                 rm -f "$texname""$ext"
@@ -66,6 +66,6 @@ else
     return 1
 fi
 
-printf "done.\n"
+# printf "done.\n"
 cd - 1>/dev/null
 return 0
