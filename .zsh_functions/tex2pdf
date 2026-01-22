@@ -1,49 +1,71 @@
 #!/usr/bin/env zsh
-
-# Compile a LaTeX document.
+# Generate a .pdf file from LaTeX.
 #
-#   Usage: tex2pdf FILENAME
+#   Usage: tex2pdf /path/to/source.tex
 
-# If exactly 1 argument (.tex file)...
-if [[ "$#" -eq 1 ]]; then
-    # If the source file exists...
-    if [[ -a "$1" ]]; then
-        local tex="${1%%.*}" # name of .tex file without extension
+if [[ "$#" -eq 1 ]]; then # if exactly 1 arg (path to .tex file to compile)...
+    if [[ -a "$1" ]]; then # if the file exists...
+        local abspath=$(realpath "$1") # absolute path to input file
+        if [[ "${abspath: -4}" == ".tex" ]]; then # and it's a .tex file...
+            local texpath=$(dirname "$abspath") # directory containing .tex file
+            local texfile=$(basename "$abspath") # name of .tex file
+            local texname=$(basename "$texfile" '.tex') # name of .tex file without extension
+            local pdflatex_args=(
+                "--interaction=nonstopmode"
+            )
 
-        echo "Compiling..."
+            cd "$texpath"
 
-        # Generates .aux, .bcf, .log, .out, .pdf, .run.xml, and .toc files
-        pdflatex --halt-on-error "${tex}".tex 1>/dev/null
-        if [[ "$?" -ne 0 ]]; then
+            printf 'compiling...'
+            # generates .aux, .bcf, .log, .out, .pdf, .run.xml, and .toc files
+            pdflatex "$pdflatex_args[@]" "$texfile" 1>/dev/null
+            if [[ "$?" -ne 0 ]]; then # if pdflatex returned an error value...
+                echo "error: pdflatex failed to generate .pdf from "${abspath}""
+                cd - 1>/dev/null
+                return 1
+            fi
+            local exts=('.aux' '.bcf' '.log' '.out' '.run.xml' '.toc')
+
+            printf 'generating bibliography...'
+            # generates .bbl and .blg files
+            biber "$texname" 1>/dev/null
+            if [[ "$?" -ne 0 ]]; then # if biber returned an error value...
+                echo "error: biber failed to generate bibliography for "$abspath""
+                cd - 1>/dev/null
+                return 1
+            fi
+            exts+=(".bbl" ".blg")
+
+            # i'm not sure why it's necessary to run pdflatex twice, but it is
+            pdflatex "$pdflatex_args[@]" "$texfile" 1>/dev/null
+            pdflatex "$pdflatex_args[@]" "$texfile" 1>/dev/null
+            if [[ "$?" -ne 0 ]]; then # if pdflatex returned an error value...
+                echo "error: pdflatex failed to generate .pdf from "$abspath""
+                cd - 1>/dev/null
+                return 1
+            fi
+
+            printf "cleaning up..."
+            # Delete intermediary files
+            for ext in "$exts[@]"; do
+                rm -f "$texname""$ext"
+            done
+        else
+            echo "error: file "$abspath" is not a LaTeX source file"
+            cd - 1>/dev/null
             return 1
         fi
-        local exts=(".aux" ".bcf" ".log" ".out" ".run.xml" ".toc")
-
-        # Generates .bbl and .blg files
-        biber "${tex}" 1>/dev/null
-        if [[ "$?" -ne 0 ]]; then
-            return 1
-        fi
-        exts+=(".bbl" ".blg")
-
-        # I'm not sure why it's necessary to run `pdflatex' twice, but it is
-        pdflatex --halt-on-error "${tex}".tex 1>/dev/null
-        pdflatex --halt-on-error "${tex}".tex 1>/dev/null
-        if [[ "$?" -ne 0 ]]; then
-            return 1
-        fi
-
-        echo "Cleaning up..."
-        # Delete intermediary files
-        for ext in "${exts[@]}"; do
-            rm -f "${tex}""${ext}"
-        done
     else
+        echo "error: file "$1" not found"
+        cd - 1>/dev/null
         return 1
     fi
 else
+    echo "usage: tex2pdf /path/to/source.tex"
+    cd - 1>/dev/null
     return 1
 fi
 
-echo "Done."
+printf "done.\n"
+cd - 1>/dev/null
 return 0
