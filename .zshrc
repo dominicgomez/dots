@@ -58,6 +58,7 @@ alias grep='grep --color=auto'
 alias la='ls -A'
 alias t='tree -C'
 alias ta='tree -Ca'
+alias ytdl4='yt-dlp -S res,ext:mp4:m4a --recode mp4'
 # for my dotfiles
 alias dots="$(which git) --git-dir=$HOME/.dots --work-tree=$HOME"
 alias v="$VISUAL $HOME/.vimrc"
