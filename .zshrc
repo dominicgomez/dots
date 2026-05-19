@@ -77,9 +77,10 @@ alias bdoc='brew doctor'
 alias bclean='brew cleanup -s'
 # for python
 alias py='python3'
+# for uv
+
 # for pip
 alias pip='pip3'
-alias p:='pip search'
 alias p::='pip show'
 alias pi='pip install'
 alias prm='pip uninstall'
