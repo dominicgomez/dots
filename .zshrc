@@ -78,12 +78,15 @@ alias bclean='brew cleanup -s'
 # for python
 alias py='python3'
 # for uv
-
+alias newpy='uv init'
+alias uvi='uv add'
+alias uvrm='uv remove'
+alias uvu='uv sync'
 # for pip
 alias pip='pip3'
 alias p::='pip show'
-alias pi='pip install'
-alias prm='pip uninstall'
-alias pu='pip install --upgrade'
-alias puu='pip install --upgrade pip'
-alias pls='pip list'
+# alias pi='pip install'
+# alias prm='pip uninstall'
+# alias pu='pip install --upgrade'
+# alias puu='pip install --upgrade pip'
+# alias pls='pip list'
