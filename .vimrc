@@ -78,7 +78,7 @@ set softtabstop=4
 set tabstop=8
 " code completion
 set completeopt=menuone
-let g:jedi#show_call_signatures = "1"
+let g:jedi#show_call_signatures = "2"
 let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
 
 " autocommands
