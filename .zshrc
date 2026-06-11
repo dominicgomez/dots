@@ -28,6 +28,7 @@ export EDITOR='vim'
 export GPG_TTY="$(tty)"
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1024
+export HOMEBREW_NO_ASK=1
 export PATH="$BREW_PATHS:$LOCAL_PATHS:$PATH"
 export SAVEHIST=2048
 export TERM='xterm-256color'
