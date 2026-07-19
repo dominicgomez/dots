@@ -12,6 +12,6 @@
 [commit]
     gpgsign = true
 [credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
+    helper =
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+    useHttpPath = true
