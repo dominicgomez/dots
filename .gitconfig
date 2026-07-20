@@ -12,6 +12,6 @@
 [commit]
     gpgsign = true
 [credential]
-	helper = manager
+    helper = manager
 [credential "https://dev.azure.com"]
     useHttpPath = true
