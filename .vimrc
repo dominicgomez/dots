@@ -61,7 +61,7 @@ set guioptions-=r
 " colors
 syntax on
 colorscheme dracula
-let g:lightline = {'colorscheme': 'jellybeans'}
+let g:lightline = {'colorscheme': 'darcula'}
 set background=dark
 set colorcolumn=80,120
 set cursorcolumn
