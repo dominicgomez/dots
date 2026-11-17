@@ -74,7 +74,7 @@ alias bug='brew upgrade'
 alias brm='brew uninstall'
 alias buu='brew update && brew upgrade'
 alias bls='brew list'
-alias bdoc='brew doctor'
+alias bdr='brew doctor'
 alias bclean='brew cleanup -s'
 # for python
 alias py='python3'
